@@ -1,0 +1,23 @@
+{
+  "name": "Test PWA",
+  "short_name": "Test",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "red",
+  "theme_color": "blue",
+  "orientation": "portrait-primary",
+  "description": "plant monitoring app",
+  "icons": [
+    {
+      "src": "./logoappli192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./logoappli512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
