@@ -9,51 +9,34 @@
     <link rel="apple-touch-icon" href="./logo192.png" />
     <meta name="apple-mobile-web-app-status-bar" content="white" />
     <meta name="theme-color" content="white" />
-    <meta<!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="manifest" href="./manifest.json" />
-        <link rel="apple-touch-icon" href="./logo192.png" />
-        <meta name="apple-mobile-web-app-status-bar" content="white" />
-        <meta name="theme-color" content="white" />
-        <meta
-          name="description"
-          content="Edgar - Le pot de fleur connecté qui prend soin de vos plantes. Suivez la santé de vos plantes à distance grâce à des capteurs intelligents."
-        />
-      </head>
-      <body>
-        <h1>hello</h1>
-        <button id="installPWA" style="display: none;">Installer l'App</button>
-        <script>
-          let deferredPrompt;
-          const installButton = document.getElementById("installPWA");
-          
-          window.addEventListener("beforeinstallprompt", (event) => {
-            event.preventDefault();
-            deferredPrompt = event;
-            installButton.style.display = "block";
-          });
-          
-          installButton.addEventListener("click", async () => {
-            if (deferredPrompt) {
-              deferredPrompt.prompt();
-              const { outcome } = await deferredPrompt.userChoice;
-              console.log(`Installation outcome: ${outcome}`);
-              deferredPrompt = null;
-              installButton.style.display = "none";
-            }
-          });
-        </script>
-        <script src="./app.js"></script>
-      </body>
-    </html>
+    <meta
+      name="description"
+      content="Edgar - Le pot de fleur connecté qui prend soin de vos plantes. Suivez la santé de vos plantes à distance grâce à des capteurs intelligents."
+    />
   </head>
   <body>
     <h1>hello</h1>
+    <button id="installPWA" style="display: none">Installer l'App</button>
+    <script>
+      let deferredPrompt;
+      const installButton = document.getElementById("installPWA");
+
+      window.addEventListener("beforeinstallprompt", (event) => {
+        event.preventDefault();
+        deferredPrompt = event;
+        installButton.style.display = "block";
+      });
+
+      installButton.addEventListener("click", async () => {
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          const { outcome } = await deferredPrompt.userChoice;
+          console.log(`Installation outcome: ${outcome}`);
+          deferredPrompt = null;
+          installButton.style.display = "none";
+        }
+      });
+    </script>
     <script src="./app.js"></script>
   </body>
 </html>
